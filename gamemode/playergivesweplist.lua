@@ -3,68 +3,11 @@
    Desc: Return true if it's allowed 
 -----------------------------------------------------------]]
 function GM:PlayerGiveSWEP( ply, wname, wtable )
-	--JeromeCrackie
-	if ( ply:SteamID() == "STEAM_0:1:40580894" ) then //If steamid is that, then execute the following
+	if( ply:IsAdmin() and ply:IsValid() )
 		return true
-	--Atlas
-	elseif ( ply:SteamID() == "STEAM_0:1:17443939" ) then //If steamid is that, then execute the following
-		return true
-	--Duck
-	elseif ( ply:SteamID() == "STEAM_0:0:15386596" ) then //If steamid is that, then execute the following
-		return true
-	--ExpiredGamer13
-	elseif ( ply:SteamID() == "STEAM_0:0:55327419" ) then //If steamid is that, then execute the following
-		return true
-	--Waffelgun
-	elseif ( ply:SteamID() == "STEAM_0:1:19531411" ) then //If steamid is that, then execute the following
-		return true
-	--Mike
-	elseif ( ply:SteamID() == "STEAM_0:1:42637878" ) then //If steamid is that, then execute the following
-		return true
-	--TT Dark Light
-	elseif ( ply:SteamID() == "STEAM_0:0:61917973" ) then //If steamid is that, then execute the following
-		return true
-	--Shrek Shrok Slap
-	elseif ( ply:SteamID() == "STEAM_0:0:52801145" ) then //If steamid is that, then execute the following
-		return true
-	--Master
-	elseif ( ply:SteamID() == "STEAM_0:1:66530730" ) then //If steamid is that, then execute the following
-		return true
-	--[ARG]portalizer
-	elseif ( ply:SteamID() == "STEAM_0:0:66531306" ) then //If steamid is that, then execute the following
-		return true
-	--Chef #AnonymousFamily
-	elseif ( ply:SteamID() == "STEAM_0:0:27489475" ) then //If steamid is that, then execute the following
-		return true
-	--Lego
-	elseif ( ply:SteamID() == "STEAM_0:0:40938949" ) then //If steamid is that, then execute the following
-		return true
-	--[[--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true
-	--
-	elseif ( ply:SteamID() == "" ) then //If steamid is that, then execute the following
-		return true]]--
-	--Everyone else
 	else
+		ply:SendLua( " notification.AddLegacy( \"That's not very cannon to the story, eh?\", NOTIFY_ERROR, 2 ) " )
+		ply:SendLua( " surface.PlaySound( \"buttons/button10.wav\" " )
 		return false
 	end
 end
