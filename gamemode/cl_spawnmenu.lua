@@ -8,67 +8,16 @@ include( 'specialchars.lua' )
 	This saves load times if your mod doesn't actually use the
 	spawn menu for any reason.
 -----------------------------------------------------------]]
---[[function checkAdmin(ply)
-	if ply:IsAdmin() then
-		ply:ChatPrint("You are an Admin on the server")
-		function GM:SpawnMenuEnabled(ply)
-			return true
-		end
-	else
-		ply:ChatPrint("You are not an admin on this server!")
-		function GM:SpawnMenuEnabled(ply)
-			return false
-		end
-	end	 
-end]]--
 function GM:SpawnMenuEnabled(ply)
-	return false -- REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-PLEASEFIXME
+	return true
 end
---[[function GM:SpawnMenuEnabled(ply)
-	if ( ply:SteamID() == "STEAM_0:1:40580894" ) then //If steamid is that, then execute the following
-		return false
-	else
-		return true
-	end
-end]]--
 
 
---[[---------------------------------------------------------
-  Called when spawnmenu is trying to be opened. 
-   Return false to dissallow it.
------------------------------------------------------------]]
---[[function checkAdmin(ply)
-	if ply:IsAdmin() then
-		ply:ChatPrint("You are an Admin on the server")
-		function GM:SpawnMenuOpen(ply)
-			GAMEMODE:SuppressHint( "OpeningMenu" )
-			GAMEMODE:AddHint( "OpeningContext", 20 )
-			return true
-		end
-	else
-		ply:ChatPrint("You are not an admin on this server!")
-		function GM:SpawnMenuOpen(ply)
-			GAMEMODE:SuppressHint( "OpeningMenu" )
-			GAMEMODE:AddHint( "OpeningContext", 20 )
-			return false
-		end
-	end
- 
-end]]--
 function GM:SpawnMenuOpen(ply)
 	GAMEMODE:SuppressHint( "OpeningMenu" )
 	GAMEMODE:AddHint( "OpeningContext", 20 )
-	return false -- REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-REMOVED-PLEASEFIXME
+	return true
 end
---[[function GM:SpawnMenuOpen(ply)
-	if ( ply:SteamID() == "STEAM_0:1:40580894" ) then //If steamid is that, then execute the following
-		return false
-	else
-		GAMEMODE:SuppressHint( "OpeningMenu" )
-		GAMEMODE:AddHint( "OpeningContext", 20 )
-		return true
-	end
-end]]--
 
 
 --[[---------------------------------------------------------
@@ -80,7 +29,7 @@ function GM:ContextMenuOpen()
 	GAMEMODE:SuppressHint( "OpeningContext" )
 	GAMEMODE:AddHint( "ContextClick", 20 )
 
-	return true	
+	return false
 end
 
 --[[---------------------------------------------------------
