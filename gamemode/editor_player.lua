@@ -1,4 +1,4 @@
-AddCSLuaFile()
+--[[AddCSLuaFile()
 
 local default_animations = { "idle_all_01", "menu_walk" }
 
@@ -271,3 +271,4 @@ list.Set( "PlayerOptionsAnimations", "css_phoenix", { "pose_standing_02", "idle_
 list.Set( "PlayerOptionsAnimations", "css_riot", { "pose_standing_02", "idle_fist" } )
 list.Set( "PlayerOptionsAnimations", "css_swat", { "pose_standing_02", "idle_fist" } )
 list.Set( "PlayerOptionsAnimations", "css_urban", { "pose_standing_02", "idle_fist" } )
+]]--
