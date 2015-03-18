@@ -83,6 +83,9 @@ function GM:CanTool( ply, trace, mode )
 	
 end
 
+function GetPlayerModel()
+	Model("models/player/group01/standley.mdl")
+end
 
 --[[---------------------------------------------------------
    Name: gamemode:GravGunPunt( )

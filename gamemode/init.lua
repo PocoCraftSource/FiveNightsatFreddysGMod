@@ -179,23 +179,12 @@ end //close the function
 -----------------------------------------------------------]]
 function GM:PlayerLoadout( ply ) // What should the player recieve when joining a team?
  
-	if ply:Team() == 1 then //If he is team 1, then give him the following items
- 
-		ply:Give( "weapon_physcannon" ) // A Gravity gun
-		//ply:Give( "weapon_physgun" ) // A Physics gun
-		//ply:Give( "gmod_tool" ) // and don't forget the tool gun!
- 
- 
-	elseif ply:Team() == 2 then // So if he isn't team 1, he could be team 2?
- 
-		ply:Give( "weapon_physcannon" ) //Assuming he is, then give him Gravity gun
-		//ply:Give( "weapon_physgun" ) // Physics gun
-		//ply:Give( "weapon_ar2" ) // AR2 
-		//ply:Give( "gmod_tool" ) // and the gmod tool
- 
-	//I should mention at this point you can put in else, but there is no point. All possible scenarios are covered. Thus we end it	
-	end //right here.
-end // End the function
+	if ( cvars.Bool( "sbox_weapons", true ) ) then
+	
+		self.Player:Give( "coflantern" )
+	
+	end
+end
  
 function sb_team1( ply ) //This is what happens when we enter sb_team1 into the console.
  
